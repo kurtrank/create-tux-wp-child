@@ -63,7 +63,7 @@ function install(dest) {
 	}
 
 	// setup .env
-	copyFileSync(".env.sample", ".env");
+	copyFileSync(`${themeDir}/.env.sample`, `${themeDir}/.env`);
 
 	process.stdout.write("done\n");
 
