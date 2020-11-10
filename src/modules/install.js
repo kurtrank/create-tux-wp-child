@@ -4,7 +4,13 @@ const process = require("process");
 const color = require("./color");
 const highlight = require("./highlight");
 const { githubBase, githubUser } = require("../data");
-const { rmdirSync, unlinkSync, writeFileSync, readFile } = require("fs");
+const {
+	rmdirSync,
+	unlinkSync,
+	writeFileSync,
+	readFile,
+	copyFileSync,
+} = require("fs");
 
 function install(dest) {
 	const themeDir = `${process.cwd()}/${dest}`;
@@ -55,6 +61,12 @@ function install(dest) {
 	} catch (error) {
 		console.error("Replacement error occurred:", error);
 	}
+
+	// setup .env
+	copyFileSync(".env.sample", ".env", (err) => {
+		if (err) throw err;
+	});
+
 	process.stdout.write("done\n");
 
 	run(`git`, ["init"], dest);
@@ -68,17 +80,19 @@ function install(dest) {
 	run(`git`, ["branch", "-M", "master"], dest);
 
 	console.log(
-		highlight(`\nNew theme initialized and connected to ${repoUrl}\n`)
+		"\n" + highlight(`New theme initialized and connected to ${repoUrl}`)
 	);
 
-	console.log(color(`Installing dependencies...\n`));
+	console.log(color(`\nInstalling dependencies...\n`));
 	run(`npm`, ["install"], dest);
 
 	console.log(
-		highlight("\nDependencies installed. Theme is ready for development!")
+		"\n" + highlight("Dependencies installed. Theme is ready for development!")
 	);
 	console.log(
-		"\nMove into the new theme folder and run `" +
+		"\nIn your new theme, update `" +
+			color(".env", "magenta") +
+			"` with your local site URL and then run `" +
 			color("npm run dev", "cyan") +
 			"` to start"
 	);
