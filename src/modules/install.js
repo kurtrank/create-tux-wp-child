@@ -63,9 +63,7 @@ function install(dest) {
 	}
 
 	// setup .env
-	copyFileSync(".env.sample", ".env", (err) => {
-		if (err) throw err;
-	});
+	copyFileSync(".env.sample", ".env");
 
 	process.stdout.write("done\n");
 
