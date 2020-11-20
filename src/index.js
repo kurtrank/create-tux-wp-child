@@ -6,6 +6,9 @@ const color = require("./modules/color");
 
 // Get argument for name
 let name = process.argv[2];
+const branchArg = process.argv[3] ? process.argv[3].split("=") : false;
+const branch =
+	branchArg && "branch" === branchArg[0] && branchArg[1] ? branchArg[1] : false;
 
 if (name) {
 	// Has name, start cloning
@@ -22,9 +25,9 @@ if (name) {
 }
 
 function start() {
-	if (clone(name)) {
+	if (clone(name, branch)) {
 		// Clone sucess, run setup
-		console.log(color("\nRepo cloned sucessfully, beginning setup...\n"));
+		console.log(color("\nRepo cloned successfully, beginning setup...\n"));
 		install(name);
 	} else {
 		// Clone fail, log error message

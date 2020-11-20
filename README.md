@@ -14,3 +14,13 @@ Create a new repo with the format `tux-wp-abbr`, where "abbr" is the school's in
 ```sh
 npx https://github.com/kurtrank/create-tux-wp-child/ abbr
 ```
+
+### Options
+
+`--branch=branch-name` can be passed as a second argument, and `branch-name` will be used as the starting point for the new theme. This allows for better testing before updates to the starter are merged.
+
+This is primarily used with the beta branch:
+
+```sh
+npx https://github.com/kurtrank/create-tux-wp-child/ abbr --branch=beta
+```
