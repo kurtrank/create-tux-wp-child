@@ -8,7 +8,9 @@ const color = require("./modules/color");
 let name = process.argv[2];
 const branchArg = process.argv[3] ? process.argv[3].split("=") : false;
 const branch =
-	branchArg && "branch" === branchArg[0] && branchArg[1] ? branchArg[1] : false;
+	branchArg && "--branch" === branchArg[0] && branchArg[1]
+		? branchArg[1]
+		: false;
 
 if (name) {
 	// Has name, start cloning
