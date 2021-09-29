@@ -4,7 +4,7 @@ A simple scaffolding tool to generate a new WordPress theme based on [tux-wp-chi
 
 ## Requirements
 
-- [Node](https://nodejs.org/)
+- [Node 14+](https://nodejs.org/)
 - Read access to the [TUX child starter repo](https://github.com/thelearninghouse/tux-wp-child) (since the repo is currently private)
 
 ## Setup
