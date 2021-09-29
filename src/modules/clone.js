@@ -8,7 +8,7 @@ const color = require("./color");
 /**
  * External Dependencies
  */
-const { rmdirSync } = require("fs");
+const { rmSync } = require("fs");
 
 function clone(dest, branch = false) {
 	const cmd = run("git", [
@@ -34,7 +34,7 @@ function clone(dest, branch = false) {
 		}
 
 		// Delete .git folder
-		rmdirSync(`${dest}/.git`, { recursive: true });
+		rmSync(`${dest}/.git`, { recursive: true, force: true });
 		return true;
 	} else {
 		return false;
