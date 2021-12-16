@@ -34,7 +34,7 @@ function start() {
 	} else {
 		// Clone fail, log error message
 		console.error(
-			"\nClone failed, make sure you have access to thelearninghouse/tux-wp-child"
+			"\nClone failed, make sure you have access to wiley/tux-wp-child"
 		);
 	}
 }
