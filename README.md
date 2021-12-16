@@ -1,11 +1,11 @@
 # create-tux-wp-child
 
-A simple scaffolding tool to generate a new WordPress theme based on [tux-wp-child](https://github.com/thelearninghouse/tux-wp-child).
+A simple scaffolding tool to generate a new WordPress theme based on [tux-wp-child](https://github.com/wiley/tux-wp-child).
 
 ## Requirements
 
 - [Node 14+](https://nodejs.org/)
-- Read access to the [TUX child starter repo](https://github.com/thelearninghouse/tux-wp-child) (since the repo is currently private)
+- Read access to the [TUX child starter repo](https://github.com/wiley/tux-wp-child) (since the repo is currently private)
 
 ## Setup
 
