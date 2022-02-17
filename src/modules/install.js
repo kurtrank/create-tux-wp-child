@@ -43,6 +43,7 @@ function install(dest) {
 	try {
 		const results = replace.sync({
 			files: [`${themeDir}/.*`, `${themeDir}/*`],
+			ignore: [`${themeDir}/Jenkinsfile`],
 			from: [/tux-wp-child/g, "TUX WP Child", "# TUX Child Theme Starter"],
 			to: [dest, themeName, `# ${themeName} Child Theme`],
 		});
